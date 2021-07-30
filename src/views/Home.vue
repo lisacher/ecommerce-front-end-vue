@@ -2,42 +2,33 @@
   <div class="home-navbar">
     <Navbar class="nav" />
     <HomeSlider />
+    <HomeCategory />
+    <HomePicsWall />
     <div class="content">
-      <h1>BEST SELLERS</h1>
+      <h3>限時促銷</h3>
       <div class="container">
         <div class="row">
-          <div class="col-sm-3 best-sell-content">
-            <p>
-              To make things easier, we've gathered top 3 products from list.
-            </p>
-          </div>
-          <div class="col-sm-3 item">
+          <div class="col-sm-6 item">
             <img
-              src="./../assets/AAA_0059.jpeg"
-              width="300px"
-              height="450px"
+              src="./../assets/sale1.png"
+              width="550px"
+              height="300px"
               alt=""
             />
           </div>
-          <div class="col-sm-3 item">
+          <div class="col-sm-6 item">
             <img
-              src="./../assets/AAA_0103.jpeg"
-              width="300px"
-              height="450px"
-              alt=""
-            />
-          </div>
-          <div class="col-sm-3 item">
-            <img
-              src="./../assets/AAA_0247.jpeg"
-              width="300px"
-              height="450px"
+              src="./../assets/sale2.png"
+              width="550px"
+              height="300px"
               alt=""
             />
           </div>
         </div>
       </div>
     </div>
+    <HomeProducts />
+    <img src="./../assets/1.jpg" width="100%" height="100%" alt="" />
     <Footer />
   </div>
 </template>
@@ -46,14 +37,32 @@
 import Navbar from "./../components/Navbar.vue";
 import HomeSlider from "./../components/HomeSlider.vue";
 import Footer from "./../components/Footer.vue";
+import HomePicsWall from "./../components/HomePicsWall.vue";
+import HomeCategory from "./../components/HomeCategory.vue";
+import HomeProducts from "./../components/HomeProducts.vue";
 
 export default {
-  components: { Navbar, HomeSlider, Footer },
+  components: {
+    Navbar,
+    HomeSlider,
+    Footer,
+    HomePicsWall,
+    HomeCategory,
+    HomeProducts,
+  },
   name: "Home",
 };
 </script>
 
 <style scoped>
+h3 {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+}
+img {
+  margin-top: 50px;
+}
 .nav {
   position: fixed;
   top: 0;
@@ -61,19 +70,10 @@ export default {
   width: 100%;
   z-index: 100;
 }
-.content {
-  background-color: #f4f4f4;
-}
-.content h1 {
-  font-size: 60px;
-  padding: 70px;
-}
-.best-sell-content p {
-  display: flex;
-  height: 100%;
-  align-items: flex-end;
-  padding-bottom: 80px;
-  padding-left: 30px;
+.content h3 {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .item img {
   margin: 10px;
@@ -84,23 +84,19 @@ export default {
     justify-content: center;
   }
   .item img {
-    width: 200px;
-    height: 300px;
+    width: 90%;
+    height: 90%;
   }
 }
 @media (max-width: 425px) {
-  .content h1 {
+  .content h3 {
     text-align: center;
     padding-top: 30px;
     font-size: 35px;
   }
-  .best-sell-content p {
-    padding-bottom: 30px;
-    text-align: center;
-  }
   .item img {
-    width: 300px;
-    height: 450px;
+    width: 90%;
+    height: 90%;
   }
 }
 </style>

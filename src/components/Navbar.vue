@@ -16,7 +16,7 @@
       <div class="collapse navbar-collapse" id="navbarScroll">
         <ul
           class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
-          style="--bs-scroll-height: 100px;"
+          style="--bs-scroll-height: 100%;"
         >
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">NEW</a>
@@ -69,19 +69,27 @@
             aria-label="Search"
           />
           <button class="btn me-3" type="submit">
-            <font-awesome-icon :icon="['fas', 'search']" size="lg" />
+            <font-awesome-icon
+              :icon="['fas', 'search']"
+              size="lg"
+              class="icon"
+            />
           </button>
         </form>
         <font-awesome-icon
           :icon="['far', 'user']"
           size="lg"
-          class="me-4 ms-4"
+          class="icon me-4 ms-4"
         />
-        <font-awesome-icon :icon="['far', 'heart']" size="lg" class="me-4" />
+        <font-awesome-icon
+          :icon="['far', 'heart']"
+          size="lg"
+          class="me-4 icon"
+        />
         <font-awesome-icon
           :icon="['fas', 'shopping-cart']"
           size="lg"
-          class="me-4"
+          class="icon me-4"
         />
       </div>
     </div>
@@ -107,5 +115,25 @@ export default {};
 .form-control {
   height: 26px;
   align-self: center;
+}
+.navbar-collapse {
+  background-color: #fff;
+}
+.navbar-nav-scroll {
+  text-align: center;
+}
+
+@media (max-width: 991px) {
+  .form-control {
+    display: none;
+  }
+  .icon {
+    display: none;
+  }
+}
+@media (max-width: 320px) {
+  .navbar-brand {
+    font-size: 25px;
+  }
 }
 </style>
