@@ -1,6 +1,6 @@
 <template>
   <div class="home-navbar">
-    <Navbar class="nav" />
+    <Navbar />
     <HomeSlider />
     <HomeCategory />
     <HomePicsWall />
@@ -29,6 +29,7 @@
     </div>
     <HomeProducts />
     <img src="./../assets/1.jpg" width="100%" height="100%" alt="" />
+    <FootNavBar class="mobile-show" />
     <Footer />
   </div>
 </template>
@@ -40,6 +41,7 @@ import Footer from "./../components/Footer.vue";
 import HomePicsWall from "./../components/HomePicsWall.vue";
 import HomeCategory from "./../components/HomeCategory.vue";
 import HomeProducts from "./../components/HomeProducts.vue";
+import FootNavBar from "./../components/FootNavBar.vue";
 
 export default {
   components: {
@@ -49,6 +51,7 @@ export default {
     HomePicsWall,
     HomeCategory,
     HomeProducts,
+    FootNavBar,
   },
   name: "Home",
 };
@@ -63,13 +66,7 @@ h3 {
 img {
   margin-top: 50px;
 }
-.nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 100;
-}
+
 .content h3 {
   text-align: center;
   padding-top: 20px;

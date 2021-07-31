@@ -199,6 +199,10 @@
   width: 80%;
   height: 80%;
 }
+.item img:hover {
+  opacity: 0.6;
+  transition: all 0.5s;
+}
 @media (max-width: 768px) {
   .col-sm-3 {
     width: 50%;

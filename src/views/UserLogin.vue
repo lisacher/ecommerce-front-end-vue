@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-    <Navbar class="nav" />
+    <Navbar />
     <div class="container">
       <div class="row">
         <form class="login-form">
@@ -54,6 +54,7 @@
         </form>
       </div>
     </div>
+    <FootNavBar class="mobile-show" />
     <Footer />
   </div>
 </template>
@@ -61,8 +62,9 @@
 <script>
 import Footer from "../components/Footer.vue";
 import Navbar from "../components/Navbar.vue";
+import FootNavBar from "../components/FootNavBar.vue";
 export default {
-  components: { Navbar, Footer },
+  components: { Navbar, Footer, FootNavBar },
 };
 </script>
 
@@ -75,13 +77,10 @@ h3 {
   margin-bottom: 50px;
   font-weight: bold;
 }
-.nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 100;
+input:focus {
+  outline: none;
 }
+
 .login-form {
   justify-content: center;
   margin-top: 150px;

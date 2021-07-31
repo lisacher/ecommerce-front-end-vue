@@ -7,15 +7,31 @@
   text-decoration: none;
 }
 
-/* navbar */
-
 /* link style */
 .router-link-active {
   text-decoration: none;
   color: black;
 }
+a {
+  color: black;
+}
 a:hover {
   color: rgb(97, 96, 96);
+}
+a:focus {
+  outline: none;
+}
+/* show item */
+.mobile-show {
+  display: none;
+}
+@media (max-width: 991px) {
+  .mobile-show {
+    display: inline;
+  }
+  .mobile-none {
+    display: none;
+  }
 }
 
 html,
@@ -34,4 +50,8 @@ h6,
 p {
   margin: 0;
   padding: 0;
+}
+ul {
+  padding: 0;
+  margin-bottom: 0;
 }
