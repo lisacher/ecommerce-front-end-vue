@@ -1,7 +1,9 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
-      <a class="navbar-brand me-5 ms-3" href="#">P U R E N M E</a>
+      <router-link class="navbar-brand me-5 ms-3" to="/"
+        >P U R E N M E</router-link
+      >
       <button
         class="navbar-toggler"
         type="button"
@@ -19,7 +21,9 @@
           style="--bs-scroll-height: 100%;"
         >
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">NEW</a>
+            <router-link class="nav-link active" aria-current="page" to="/new"
+              >NEW</router-link
+            >
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">RESTOCK</a>
@@ -76,11 +80,13 @@
             />
           </button>
         </form>
-        <font-awesome-icon
-          :icon="['far', 'user']"
-          size="lg"
-          class="icon me-4 ms-4"
-        />
+        <router-link to="/login">
+          <font-awesome-icon
+            :icon="['far', 'user']"
+            size="lg"
+            class="icon me-4 ms-4"
+          />
+        </router-link>
         <font-awesome-icon
           :icon="['far', 'heart']"
           size="lg"

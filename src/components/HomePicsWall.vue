@@ -160,7 +160,6 @@ h3 {
   height: 80%;
 }
 .pics {
-  flex-direction: row;
   margin: 10px;
   width: 200px;
   height: 250px;
@@ -170,8 +169,12 @@ h3 {
   font-size: 12px;
   text-align: center;
 }
-.carousel-item.active {
+.carousel-item {
   display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+.carousel-item.active {
+  display: none;
 }
 
 .carousel-control-next,

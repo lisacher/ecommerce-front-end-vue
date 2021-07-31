@@ -1,10 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap");
 
+/* all */
 * {
   list-style: none;
   font-family: "Noto Sans TC", Helvetica, "微軟正黑體", sans-serif;
   text-decoration: none;
 }
+
+/* navbar */
+
+/* link style */
 .router-link-active {
   text-decoration: none;
   color: black;
