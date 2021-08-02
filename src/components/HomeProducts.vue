@@ -2,175 +2,33 @@
   <div class="container">
     <h3>銷售榜</h3>
     <div class="row">
-      <div class="col-sm-3 item">
-        <img
-          src="https://img.ltwebstatic.com/images3_pi/2021/07/15/16263158309291f267f71d42069b7f86379e62338c_thumbnail_405x552.jpg"
-          alt=""
-        />
+      <div class="col-sm-3 item" v-for="product in products" :key="product.id">
+        <img :src="product.image" alt="" />
         <div class="item-detail">
-          <p class="item-name">綁後交叉開式羅紋針織衣</p>
-          <p class="item-price">NT$168</p>
-        </div>
-      </div>
-      <div class="col-sm-3 item">
-        <img
-          src="https://img.ltwebstatic.com/images3_pi/2021/07/27/1627349498f1eb731ebeb1131fb419c6ca39045398_thumbnail_405x552.jpg"
-          alt=""
-        />
-        <div class="item-detail">
-          <p class="item-name">綁後交叉開式羅紋針織衣</p>
-          <p class="item-price">NT$168</p>
-        </div>
-      </div>
-      <div class="col-sm-3 item">
-        <img
-          src="https://img.ltwebstatic.com/images3_pi/2021/07/26/16272653494ec28c08862388d15d6c59c50c917730_thumbnail_405x552.jpg"
-          alt=""
-        />
-        <div class="item-detail">
-          <p class="item-name">綁後交叉開式羅紋針織衣</p>
-          <p class="item-price">NT$168</p>
-        </div>
-      </div>
-      <div class="col-sm-3 item">
-        <img
-          src="https://img.ltwebstatic.com/images3_pi/2021/07/16/1626398946c49b39694b4c17a89f0551d46c6b8f0c_thumbnail_405x552.jpg"
-          alt=""
-        />
-        <div class="item-detail">
-          <p class="item-name">綁後交叉開式羅紋針織衣</p>
-          <p class="item-price">NT$168</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-3 item">
-        <img
-          src="https://img.ltwebstatic.com/images3_pi/2021/07/27/1627377386a8543b9b0e89316fe0dfed30f3ddee94_thumbnail_405x552.jpg"
-          alt=""
-        />
-        <div class="item-detail">
-          <p class="item-name">綁後交叉開式羅紋針織衣</p>
-          <p class="item-price">NT$168</p>
-        </div>
-      </div>
-      <div class="col-sm-3 item">
-        <img
-          src="https://img.ltwebstatic.com/images3_pi/2021/07/14/16262337742b1cdb573d6b57db6ee551c3b03e391a_thumbnail_405x552.jpg"
-          alt=""
-        />
-        <div class="item-detail">
-          <p class="item-name">綁後交叉開式羅紋針織衣</p>
-          <p class="item-price">NT$168</p>
-        </div>
-      </div>
-      <div class="col-sm-3 item">
-        <img
-          src="https://img.ltwebstatic.com/images3_pi/2021/07/19/1626667452b5fb192de48648726ca799e363f356fc_thumbnail_405x552.jpg"
-          alt=""
-        />
-        <div class="item-detail">
-          <p class="item-name">綁後交叉開式羅紋針織衣</p>
-          <p class="item-price">NT$168</p>
-        </div>
-      </div>
-      <div class="col-sm-3 item">
-        <img
-          src="https://img.ltwebstatic.com/images3_pi/2021/07/20/1626748702fbe1964e2fc186913b1d3e2b623a8487_thumbnail_405x552.jpg"
-          alt=""
-        />
-        <div class="item-detail">
-          <p class="item-name">綁後交叉開式羅紋針織衣</p>
-          <p class="item-price">NT$168</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-3 item">
-        <img
-          src="https://img.ltwebstatic.com/images3_pi/2021/07/15/16263158309291f267f71d42069b7f86379e62338c_thumbnail_405x552.jpg"
-          alt=""
-        />
-        <div class="item-detail">
-          <p class="item-name">綁後交叉開式羅紋針織衣</p>
-          <p class="item-price">NT$168</p>
-        </div>
-      </div>
-      <div class="col-sm-3 item">
-        <img
-          src="https://img.ltwebstatic.com/images3_pi/2021/07/27/1627349498f1eb731ebeb1131fb419c6ca39045398_thumbnail_405x552.jpg"
-          alt=""
-        />
-        <div class="item-detail">
-          <p class="item-name">綁後交叉開式羅紋針織衣</p>
-          <p class="item-price">NT$168</p>
-        </div>
-      </div>
-      <div class="col-sm-3 item">
-        <img
-          src="https://img.ltwebstatic.com/images3_pi/2021/07/26/16272653494ec28c08862388d15d6c59c50c917730_thumbnail_405x552.jpg"
-          alt=""
-        />
-        <div class="item-detail">
-          <p class="item-name">綁後交叉開式羅紋針織衣</p>
-          <p class="item-price">NT$168</p>
-        </div>
-      </div>
-      <div class="col-sm-3 item">
-        <img
-          src="https://img.ltwebstatic.com/images3_pi/2021/07/16/1626398946c49b39694b4c17a89f0551d46c6b8f0c_thumbnail_405x552.jpg"
-          alt=""
-        />
-        <div class="item-detail">
-          <p class="item-name">綁後交叉開式羅紋針織衣</p>
-          <p class="item-price">NT$168</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-3 item">
-        <img
-          src="https://img.ltwebstatic.com/images3_pi/2021/07/27/1627377386a8543b9b0e89316fe0dfed30f3ddee94_thumbnail_405x552.jpg"
-          alt=""
-        />
-        <div class="item-detail">
-          <p class="item-name">綁後交叉開式羅紋針織衣</p>
-          <p class="item-price">NT$168</p>
-        </div>
-      </div>
-      <div class="col-sm-3 item">
-        <img
-          src="https://img.ltwebstatic.com/images3_pi/2021/07/14/16262337742b1cdb573d6b57db6ee551c3b03e391a_thumbnail_405x552.jpg"
-          alt=""
-        />
-        <div class="item-detail">
-          <p class="item-name">綁後交叉開式羅紋針織衣</p>
-          <p class="item-price">NT$168</p>
-        </div>
-      </div>
-      <div class="col-sm-3 item">
-        <img
-          src="https://img.ltwebstatic.com/images3_pi/2021/07/19/1626667452b5fb192de48648726ca799e363f356fc_thumbnail_405x552.jpg"
-          alt=""
-        />
-        <div class="item-detail">
-          <p class="item-name">綁後交叉開式羅紋針織衣</p>
-          <p class="item-price">NT$168</p>
-        </div>
-      </div>
-      <div class="col-sm-3 item">
-        <img
-          src="https://img.ltwebstatic.com/images3_pi/2021/07/20/1626748702fbe1964e2fc186913b1d3e2b623a8487_thumbnail_405x552.jpg"
-          alt=""
-        />
-        <div class="item-detail">
-          <p class="item-name">綁後交叉開式羅紋針織衣</p>
-          <p class="item-price">NT$168</p>
+          <p class="item-name">{{ product.title }}</p>
+          <p class="item-price">NT$ {{ product.price }}</p>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  name: "HomeProducts",
+  props: {
+    products: {
+      type: Array,
+      required: true,
+    },
+  },
+  data() {
+    return {
+      product: this.products,
+    };
+  },
+};
+</script>
 
 <style scoped>
 h3 {
@@ -181,8 +39,9 @@ h3 {
 }
 .item img {
   margin: 10px;
-  width: 80%;
-  height: 80%;
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
 }
 @media (max-width: 768px) {
   .col-sm-3 {

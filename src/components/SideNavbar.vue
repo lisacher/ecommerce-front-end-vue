@@ -35,7 +35,6 @@
 <style scoped>
 .side-list {
   width: 100%;
-  margin-top: 120px;
   font-size: 13px;
 }
 .list-group-title {

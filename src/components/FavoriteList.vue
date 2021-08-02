@@ -2,53 +2,42 @@
   <div class="fav">
     <div class="container border-top">
       <h4>My Wishlist 我的收藏</h4>
-      <div class="row border-bottom mb-3">
+      <div
+        class="row border-bottom mb-3"
+        v-for="(favorite, index) in favorites"
+        :key="favorite.id"
+      >
         <div class="col-sm-3 mb-3">
-          <img
-            class="img"
-            src="https://pics.pzcdn.tw/pazzo/ProductCovers/a56bc6ed-c4e6-45e9-a003-5bf3d29823fb_w100_h100.jpg"
-            alt=""
-          />
+          <img class="img" :src="favorite.image" alt="" />
         </div>
         <div class="col-sm-3 fav-detail">
-          <div class="item-name">綁後交叉開式羅紋針織衣</div>
+          <div class="item-name">{{ favorite.title }}</div>
         </div>
         <div class="col-sm-3 fav-detail">
-          <span class="item-price">NT$168</span>
+          <span class="item-price">NT$ {{ favorite.price }}</span>
         </div>
         <div class="col-sm-3 mt-2 mb-3">
-          <button type="button" class="btn btn-outline-secondary">
+          <button
+            type="button"
+            v-if="!favorite.incart"
+            class="btn btn-outline-secondary"
+            @click.stop.prevent="AddToBag(favorite)"
+          >
             Add to bag
+          </button>
+          <button
+            type="button"
+            v-else
+            class="btn btn-outline-secondary active"
+            disabled
+          >
+            Added
           </button>
           <font-awesome-icon
             :icon="['far', 'trash-alt']"
             size="lg"
             class="icon me-4 ms-4"
-          />
-        </div>
-      </div>
-      <div class="row border-bottom mb-3">
-        <div class="col-sm-3 mb-3">
-          <img
-            class="img mt-2"
-            src="https://pics.pzcdn.tw/pazzo/ProductCovers/a56bc6ed-c4e6-45e9-a003-5bf3d29823fb_w100_h100.jpg"
-            alt=""
-          />
-        </div>
-        <div class="col-sm-3 fav-detail">
-          <div class="item-name">綁後交叉開式羅紋針織衣</div>
-        </div>
-        <div class="col-sm-3 fav-detail">
-          <span class="item-price">NT$168</span>
-        </div>
-        <div class="col-sm-3 mt-2 mb-3">
-          <button type="button" class="btn btn-outline-secondary">
-            Add to bag
-          </button>
-          <font-awesome-icon
-            :icon="['far', 'trash-alt']"
-            size="lg"
-            class="icon me-4 ms-4"
+            @click="RemoveFromFav(index)"
           />
         </div>
       </div>
@@ -60,6 +49,38 @@
     </router-link>
   </div>
 </template>
+
+<script>
+import { Toast } from "./../utils/helpers";
+
+export default {
+  name: "FavoriteList",
+  props: {
+    favorites: {
+      type: Array,
+      required: true,
+    },
+  },
+  data() {
+    return {
+      favorite: this.favorites,
+    };
+  },
+  methods: {
+    AddToBag(favorite) {
+      console.log(favorite);
+      favorite.incart = true;
+      Toast.fire({
+        icon: "success",
+        title: "新增成功！",
+      });
+    },
+    RemoveFromFav(index) {
+      this.favorite.splice(index, 1);
+    },
+  },
+};
+</script>
 
 <style scoped>
 .row {
@@ -118,7 +139,7 @@ h4 {
 img {
   width: 100px;
   height: 100px;
-  object-fit: cover;
+  object-fit: fill;
 }
 .btn {
   align-items: center;
@@ -137,5 +158,9 @@ img {
 .icon:hover {
   color: rgb(108, 104, 104);
   transform: translateY(-20%);
+}
+.btn.active {
+  color: #fff;
+  background-color: rgb(116, 115, 115);
 }
 </style>

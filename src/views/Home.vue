@@ -27,7 +27,7 @@
         </div>
       </div>
     </div>
-    <HomeProducts />
+    <HomeProducts :products="products" />
     <img src="./../assets/1.jpg" width="100%" height="100%" alt="" />
     <FootNavBar class="mobile-show" />
     <Footer />
@@ -42,6 +42,7 @@ import HomePicsWall from "./../components/HomePicsWall.vue";
 import HomeCategory from "./../components/HomeCategory.vue";
 import HomeProducts from "./../components/HomeProducts.vue";
 import FootNavBar from "./../components/FootNavBar.vue";
+import productsAPI from "./../apis/products.js";
 
 export default {
   components: {
@@ -54,6 +55,24 @@ export default {
     FootNavBar,
   },
   name: "Home",
+  data() {
+    return {
+      products: [],
+    };
+  },
+  created() {
+    this.fetchProducts();
+  },
+  methods: {
+    async fetchProducts() {
+      try {
+        const response = await productsAPI.getProductsByCount();
+        this.products = response.data;
+      } catch (error) {
+        console.log("error", error);
+      }
+    },
+  },
 };
 </script>
 

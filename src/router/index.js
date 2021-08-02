@@ -27,6 +27,16 @@ const routes = [
     component: () => import("../views/UserLogin.vue"),
   },
   {
+    path: "/profile",
+    name: "user-profile",
+    component: () => import("../views/UserEditProfile.vue"),
+  },
+  {
+    path: "/checkout",
+    name: "checkout",
+    component: () => import("../views/ShoppingCart.vue"),
+  },
+  {
     path: "*",
     name: "not-found",
     component: NotFound,
