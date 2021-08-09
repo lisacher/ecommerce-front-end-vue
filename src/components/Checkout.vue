@@ -54,29 +54,33 @@
         </select>
         <div class="check ms-2 d-flex">
           <p>金額:</p>
-          <div class="price">NT$</div>
+          <div class="price">NT$ {{ totalPrices }}</div>
         </div>
         <div class="check ms-2 d-flex">
           <p>運費:</p>
-          <div class="price">70</div>
+          <div class="price">免運費</div>
         </div>
         <div class="check ms-2 d-flex">
           <h5>
             總金額:
           </h5>
-          <h5 class="price">NT$ 168</h5>
+          <h5 class="price">NT$ {{ totalPrices }}</h5>
         </div>
       </div>
-      <router-link class="btn-link" to="/new">
-        <button type="button" class="btn btn-light">
-          Continue
-        </button>
-      </router-link>
+      <button
+        type="button"
+        class="btn btn-light"
+        @click.prevent="clickContinue"
+      >
+        Continue
+      </button>
     </div>
   </div>
 </template>
 
 <script>
+import { Toast } from "./../utils/helpers";
+
 export default {
   name: "Cheackout",
   props: {
@@ -101,6 +105,22 @@ export default {
       if (item.count > 1) {
         item.count--;
       }
+    },
+    clickContinue() {
+      Toast.fire({
+        icon: "success",
+        title: "已購買完成！",
+      });
+    },
+  },
+  computed: {
+    totalPrices() {
+      let totalPrices = 0;
+      this.cart.forEach((item) => {
+        totalPrices += parseFloat(item.price * item.count);
+      });
+
+      return totalPrices.toString();
     },
   },
 };
